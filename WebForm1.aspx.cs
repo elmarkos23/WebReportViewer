@@ -15,11 +15,11 @@ namespace WebReportViewer
                 a.LocalReport.DataSources.Clear();
                 a.LocalReport.EnableExternalImages = true;
                 a.ProcessingMode = ProcessingMode.Local;
-                a.LocalReport.ReportPath = Server.MapPath("~/Report1.rdlc");
+                a.LocalReport.ReportPath = Server.MapPath("~/REPORTS/Report1.rdlc");
                 ReportDataSource datasource = new ReportDataSource("dsDatos", clsData.getData());
                 ReportDataSource datasource2 = new ReportDataSource("dsDatos2", clsData.getData2());
-                string imagePath = new Uri(Server.MapPath("~/xamarin.png")).AbsoluteUri;
-                string imagePath2 = new Uri(Server.MapPath("~/home.png")).AbsoluteUri;
+                string imagePath = new Uri(Server.MapPath("~/IMAGENES/xamarin.png")).AbsoluteUri;
+                string imagePath2 = new Uri(Server.MapPath("~/IMAGENES/home.png")).AbsoluteUri;
 
                 ReportParameter[] parameters = new ReportParameter[3];
                 parameters[0] = new ReportParameter("varFecha", DateTime.Now.ToString("dd/MM/yyyy"));
@@ -50,7 +50,7 @@ namespace WebReportViewer
                 byte[] bytes = a.LocalReport.Render("PDF", null, out contentType, out encoding, out extension, out streamIds, out warnings);
 
 
-                File.WriteAllBytes(Server.MapPath("~/"+DateTime.Now.ToString("ddMMyyyyHHmmss")+".pdf"), bytes.ToArray()); // Requires System.Linq
+                File.WriteAllBytes(Server.MapPath("~/PDF/"+DateTime.Now.ToString("ddMMyyyyHHmmss")+".pdf"), bytes.ToArray()); // Requires System.Linq
 
 
                 new GenerarPDF().Generar();

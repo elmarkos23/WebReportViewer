@@ -102,8 +102,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="home.png" />
-    <Content Include="xamarin.png" />
+    <Content Include="IMAGENES\home.png" />
+    <Content Include="IMAGENES\xamarin.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -141,7 +141,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="REPORTS\Report1.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PDF\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
