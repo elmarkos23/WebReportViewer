@@ -1,0 +1,7 @@
+C:\Users\admin\Documents\GitHub\WebReportViewer\WebReportViewer\bin\WebReportViewer.dll.config
+C:\Users\admin\Documents\GitHub\WebReportViewer\WebReportViewer\bin\WebReportViewer.dll
+C:\Users\admin\Documents\GitHub\WebReportViewer\WebReportViewer\bin\WebReportViewer.pdb
+C:\Users\admin\Documents\GitHub\WebReportViewer\WebReportViewer\obj\Debug\WebReportViewer.csprojAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\WebReportViewer\WebReportViewer\obj\Debug\WebReportViewer.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\GitHub\WebReportViewer\WebReportViewer\obj\Debug\WebReportViewer.dll
+C:\Users\admin\Documents\GitHub\WebReportViewer\WebReportViewer\obj\Debug\WebReportViewer.pdb
