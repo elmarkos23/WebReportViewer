@@ -1,12 +1,7 @@
 ﻿using Microsoft.Reporting.WebForms;
 using System;
-using System.Collections.Generic;
-using System.Data;
 using System.IO;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebReportViewer
 {
@@ -21,8 +16,8 @@ namespace WebReportViewer
                 a.LocalReport.EnableExternalImages = true;
                 a.ProcessingMode = ProcessingMode.Local;
                 a.LocalReport.ReportPath = Server.MapPath("~/Report1.rdlc");
-                ReportDataSource datasource = new ReportDataSource("dsDatos", getData());
-                ReportDataSource datasource2 = new ReportDataSource("dsDatos2", getData2());
+                ReportDataSource datasource = new ReportDataSource("dsDatos", clsData.getData());
+                ReportDataSource datasource2 = new ReportDataSource("dsDatos2", clsData.getData2());
                 string imagePath = new Uri(Server.MapPath("~/xamarin.png")).AbsoluteUri;
                 string imagePath2 = new Uri(Server.MapPath("~/home.png")).AbsoluteUri;
 
@@ -57,6 +52,10 @@ namespace WebReportViewer
 
                 File.WriteAllBytes(Server.MapPath("~/"+DateTime.Now.ToString("ddMMyyyyHHmmss")+".pdf"), bytes.ToArray()); // Requires System.Linq
 
+
+                new GenerarPDF().Generar();
+
+
                 ////Download the RDLC Report in Word, Excel, PDF and Image formats.
                 //Response.Clear();
                 //Response.Buffer = true;
@@ -74,27 +73,6 @@ namespace WebReportViewer
 
             }
         }
-        private DataTable getData()
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("ID",typeof(string));
-            dt.Columns.Add("NOMBRE", typeof(string));
-            dt.Rows.Add("1","MARCO AYALA 1");
-            dt.Rows.Add("1", "MARCO AYALA 2");
-            dt.Rows.Add("1", "MARCO AYALA 3");
-            return dt;
-        }
-
-        private DataTable getData2()
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("ID", typeof(string));
-            dt.Columns.Add("APELLIDO", typeof(string));
-            dt.Columns.Add("CLAVE", typeof(string));
-            dt.Rows.Add("1", "AYALA","123");
-            dt.Rows.Add("1", "LITUMA","456");
-            dt.Rows.Add("1", "NARVAEZ","789");
-            return dt;
-        }
+      
     }
 }
