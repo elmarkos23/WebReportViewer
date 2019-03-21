@@ -35,6 +35,26 @@
         <rd:TableAdapterName />
       </rd:DataSetInfo>
     </DataSet>
+    <DataSet Name="dsEmpresa">
+      <Query>
+        <DataSourceName>DataSet1</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Logo">
+          <DataField>Logo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DataSet1</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\admin\Documents\GitHub\WebReportViewer\WebReportViewer\DataSet1.xsd</rd:SchemaPath>
+        <rd:TableName>Empresa</rd:TableName>
+        <rd:TableAdapterFillMethod />
+        <rd:TableAdapterGetDataMethod />
+        <rd:TableAdapterName />
+      </rd:DataSetInfo>
+    </DataSet>
   </DataSets>
   <ReportSections>
     <ReportSection>
@@ -59,7 +79,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.86995cm</Top>
+            <Top>3.75391cm</Top>
             <Left>0.49953cm</Left>
             <Height>0.6cm</Height>
             <Width>7.40771cm</Width>
@@ -237,7 +257,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>dsDatos</DataSetName>
-            <Top>2.27224cm</Top>
+            <Top>5.44724cm</Top>
             <Left>0.49953cm</Left>
             <Height>1.2cm</Height>
             <Width>7.40771cm</Width>
@@ -265,7 +285,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox9</rd:DefaultName>
-            <Top>1.53113cm</Top>
+            <Top>4.41509cm</Top>
             <Left>0.49953cm</Left>
             <Height>0.6cm</Height>
             <Width>2.5cm</Width>
@@ -295,7 +315,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>varFecha</rd:DefaultName>
-            <Top>1.53113cm</Top>
+            <Top>4.41509cm</Top>
             <Left>3.07009cm</Left>
             <Height>0.6cm</Height>
             <Width>4.83715cm</Width>
@@ -310,8 +330,23 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Image Name="ImagenLogo">
+            <Source>External</Source>
+            <Value>=First(Fields!Logo.Value, "dsEmpresa")</Value>
+            <Sizing>FitProportional</Sizing>
+            <Top>0.34078cm</Top>
+            <Left>0.49953cm</Left>
+            <Height>2.18792cm</Height>
+            <Width>7.40771cm</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Image>
         </ReportItems>
-        <Height>2.04167in</Height>
+        <Height>2.79167in</Height>
         <Style />
       </Body>
       <Width>3.32292in</Width>

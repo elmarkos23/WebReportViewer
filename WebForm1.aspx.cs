@@ -20,6 +20,10 @@ namespace WebReportViewer
                 ReportViewer1.ProcessingMode = ProcessingMode.Local;
                 ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/Report1.rdlc");
                 ReportDataSource datasource = new ReportDataSource("dsDatos", getData());
+
+                ReportDataSource datasource2 = new ReportDataSource("dsEmpresa", getData());
+
+
                 ReportParameter[] parameters = new ReportParameter[1];
                 parameters[0] = new ReportParameter("varFecha", DateTime.Now.ToString("dd/MM/yyyy"));
                 ReportViewer1.LocalReport.DataSources.Add(datasource);
