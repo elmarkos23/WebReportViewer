@@ -26,7 +26,7 @@ namespace WebReportViewer {
         
         private DetalleDataTable tableDetalle;
         
-        private EmpresaDataTable tableEmpresa;
+        private Detalle2DataTable tableDetalle2;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -59,8 +59,8 @@ namespace WebReportViewer {
                 if ((ds.Tables["Detalle"] != null)) {
                     base.Tables.Add(new DetalleDataTable(ds.Tables["Detalle"]));
                 }
-                if ((ds.Tables["Empresa"] != null)) {
-                    base.Tables.Add(new EmpresaDataTable(ds.Tables["Empresa"]));
+                if ((ds.Tables["Detalle2"] != null)) {
+                    base.Tables.Add(new Detalle2DataTable(ds.Tables["Detalle2"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -94,9 +94,9 @@ namespace WebReportViewer {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public EmpresaDataTable Empresa {
+        public Detalle2DataTable Detalle2 {
             get {
-                return this.tableEmpresa;
+                return this.tableDetalle2;
             }
         }
         
@@ -170,8 +170,8 @@ namespace WebReportViewer {
                 if ((ds.Tables["Detalle"] != null)) {
                     base.Tables.Add(new DetalleDataTable(ds.Tables["Detalle"]));
                 }
-                if ((ds.Tables["Empresa"] != null)) {
-                    base.Tables.Add(new EmpresaDataTable(ds.Tables["Empresa"]));
+                if ((ds.Tables["Detalle2"] != null)) {
+                    base.Tables.Add(new Detalle2DataTable(ds.Tables["Detalle2"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -212,10 +212,10 @@ namespace WebReportViewer {
                     this.tableDetalle.InitVars();
                 }
             }
-            this.tableEmpresa = ((EmpresaDataTable)(base.Tables["Empresa"]));
+            this.tableDetalle2 = ((Detalle2DataTable)(base.Tables["Detalle2"]));
             if ((initTable == true)) {
-                if ((this.tableEmpresa != null)) {
-                    this.tableEmpresa.InitVars();
+                if ((this.tableDetalle2 != null)) {
+                    this.tableDetalle2.InitVars();
                 }
             }
         }
@@ -230,8 +230,8 @@ namespace WebReportViewer {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableDetalle = new DetalleDataTable();
             base.Tables.Add(this.tableDetalle);
-            this.tableEmpresa = new EmpresaDataTable();
-            base.Tables.Add(this.tableEmpresa);
+            this.tableDetalle2 = new Detalle2DataTable();
+            base.Tables.Add(this.tableDetalle2);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -242,7 +242,7 @@ namespace WebReportViewer {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeEmpresa() {
+        private bool ShouldSerializeDetalle2() {
             return false;
         }
         
@@ -305,7 +305,7 @@ namespace WebReportViewer {
         public delegate void DetalleRowChangeEventHandler(object sender, DetalleRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void EmpresaRowChangeEventHandler(object sender, EmpresaRowChangeEvent e);
+        public delegate void Detalle2RowChangeEventHandler(object sender, Detalle2RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -573,14 +573,18 @@ namespace WebReportViewer {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class EmpresaDataTable : global::System.Data.TypedTableBase<EmpresaRow> {
+        public partial class Detalle2DataTable : global::System.Data.TypedTableBase<Detalle2Row> {
             
-            private global::System.Data.DataColumn columnLogo;
+            private global::System.Data.DataColumn columnID;
+            
+            private global::System.Data.DataColumn columnAPELLIDO;
+            
+            private global::System.Data.DataColumn columnCLAVE;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public EmpresaDataTable() {
-                this.TableName = "Empresa";
+            public Detalle2DataTable() {
+                this.TableName = "Detalle2";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -588,7 +592,7 @@ namespace WebReportViewer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal EmpresaDataTable(global::System.Data.DataTable table) {
+            internal Detalle2DataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -605,16 +609,32 @@ namespace WebReportViewer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected EmpresaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected Detalle2DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn LogoColumn {
+            public global::System.Data.DataColumn IDColumn {
                 get {
-                    return this.columnLogo;
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn APELLIDOColumn {
+                get {
+                    return this.columnAPELLIDO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CLAVEColumn {
+                get {
+                    return this.columnCLAVE;
                 }
             }
             
@@ -629,45 +649,47 @@ namespace WebReportViewer {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public EmpresaRow this[int index] {
+            public Detalle2Row this[int index] {
                 get {
-                    return ((EmpresaRow)(this.Rows[index]));
+                    return ((Detalle2Row)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event EmpresaRowChangeEventHandler EmpresaRowChanging;
+            public event Detalle2RowChangeEventHandler Detalle2RowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event EmpresaRowChangeEventHandler EmpresaRowChanged;
+            public event Detalle2RowChangeEventHandler Detalle2RowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event EmpresaRowChangeEventHandler EmpresaRowDeleting;
+            public event Detalle2RowChangeEventHandler Detalle2RowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event EmpresaRowChangeEventHandler EmpresaRowDeleted;
+            public event Detalle2RowChangeEventHandler Detalle2RowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddEmpresaRow(EmpresaRow row) {
+            public void AddDetalle2Row(Detalle2Row row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public EmpresaRow AddEmpresaRow(string Logo) {
-                EmpresaRow rowEmpresaRow = ((EmpresaRow)(this.NewRow()));
+            public Detalle2Row AddDetalle2Row(string ID, string APELLIDO, string CLAVE) {
+                Detalle2Row rowDetalle2Row = ((Detalle2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Logo};
-                rowEmpresaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowEmpresaRow);
-                return rowEmpresaRow;
+                        ID,
+                        APELLIDO,
+                        CLAVE};
+                rowDetalle2Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDetalle2Row);
+                return rowDetalle2Row;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                EmpresaDataTable cln = ((EmpresaDataTable)(base.Clone()));
+                Detalle2DataTable cln = ((Detalle2DataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -675,46 +697,52 @@ namespace WebReportViewer {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new EmpresaDataTable();
+                return new Detalle2DataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnLogo = base.Columns["Logo"];
+                this.columnID = base.Columns["ID"];
+                this.columnAPELLIDO = base.Columns["APELLIDO"];
+                this.columnCLAVE = base.Columns["CLAVE"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnLogo = new global::System.Data.DataColumn("Logo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLogo);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
+                this.columnAPELLIDO = new global::System.Data.DataColumn("APELLIDO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAPELLIDO);
+                this.columnCLAVE = new global::System.Data.DataColumn("CLAVE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCLAVE);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public EmpresaRow NewEmpresaRow() {
-                return ((EmpresaRow)(this.NewRow()));
+            public Detalle2Row NewDetalle2Row() {
+                return ((Detalle2Row)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new EmpresaRow(builder);
+                return new Detalle2Row(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(EmpresaRow);
+                return typeof(Detalle2Row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.EmpresaRowChanged != null)) {
-                    this.EmpresaRowChanged(this, new EmpresaRowChangeEvent(((EmpresaRow)(e.Row)), e.Action));
+                if ((this.Detalle2RowChanged != null)) {
+                    this.Detalle2RowChanged(this, new Detalle2RowChangeEvent(((Detalle2Row)(e.Row)), e.Action));
                 }
             }
             
@@ -722,8 +750,8 @@ namespace WebReportViewer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.EmpresaRowChanging != null)) {
-                    this.EmpresaRowChanging(this, new EmpresaRowChangeEvent(((EmpresaRow)(e.Row)), e.Action));
+                if ((this.Detalle2RowChanging != null)) {
+                    this.Detalle2RowChanging(this, new Detalle2RowChangeEvent(((Detalle2Row)(e.Row)), e.Action));
                 }
             }
             
@@ -731,8 +759,8 @@ namespace WebReportViewer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.EmpresaRowDeleted != null)) {
-                    this.EmpresaRowDeleted(this, new EmpresaRowChangeEvent(((EmpresaRow)(e.Row)), e.Action));
+                if ((this.Detalle2RowDeleted != null)) {
+                    this.Detalle2RowDeleted(this, new Detalle2RowChangeEvent(((Detalle2Row)(e.Row)), e.Action));
                 }
             }
             
@@ -740,14 +768,14 @@ namespace WebReportViewer {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.EmpresaRowDeleting != null)) {
-                    this.EmpresaRowDeleting(this, new EmpresaRowChangeEvent(((EmpresaRow)(e.Row)), e.Action));
+                if ((this.Detalle2RowDeleting != null)) {
+                    this.Detalle2RowDeleting(this, new Detalle2RowChangeEvent(((Detalle2Row)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveEmpresaRow(EmpresaRow row) {
+            public void RemoveDetalle2Row(Detalle2Row row) {
                 this.Rows.Remove(row);
             }
             
@@ -774,7 +802,7 @@ namespace WebReportViewer {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "EmpresaDataTable";
+                attribute2.FixedValue = "Detalle2DataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -889,43 +917,99 @@ namespace WebReportViewer {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class EmpresaRow : global::System.Data.DataRow {
+        public partial class Detalle2Row : global::System.Data.DataRow {
             
-            private EmpresaDataTable tableEmpresa;
+            private Detalle2DataTable tableDetalle2;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal EmpresaRow(global::System.Data.DataRowBuilder rb) : 
+            internal Detalle2Row(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableEmpresa = ((EmpresaDataTable)(this.Table));
+                this.tableDetalle2 = ((Detalle2DataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Logo {
+            public string ID {
                 get {
                     try {
-                        return ((string)(this[this.tableEmpresa.LogoColumn]));
+                        return ((string)(this[this.tableDetalle2.IDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Logo\' de la tabla \'Empresa\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ID\' de la tabla \'Detalle2\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableEmpresa.LogoColumn] = value;
+                    this[this.tableDetalle2.IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsLogoNull() {
-                return this.IsNull(this.tableEmpresa.LogoColumn);
+            public string APELLIDO {
+                get {
+                    try {
+                        return ((string)(this[this.tableDetalle2.APELLIDOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'APELLIDO\' de la tabla \'Detalle2\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDetalle2.APELLIDOColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetLogoNull() {
-                this[this.tableEmpresa.LogoColumn] = global::System.Convert.DBNull;
+            public string CLAVE {
+                get {
+                    try {
+                        return ((string)(this[this.tableDetalle2.CLAVEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'CLAVE\' de la tabla \'Detalle2\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDetalle2.CLAVEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsIDNull() {
+                return this.IsNull(this.tableDetalle2.IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetIDNull() {
+                this[this.tableDetalle2.IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsAPELLIDONull() {
+                return this.IsNull(this.tableDetalle2.APELLIDOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetAPELLIDONull() {
+                this[this.tableDetalle2.APELLIDOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsCLAVENull() {
+                return this.IsNull(this.tableDetalle2.CLAVEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetCLAVENull() {
+                this[this.tableDetalle2.CLAVEColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -967,22 +1051,22 @@ namespace WebReportViewer {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class EmpresaRowChangeEvent : global::System.EventArgs {
+        public class Detalle2RowChangeEvent : global::System.EventArgs {
             
-            private EmpresaRow eventRow;
+            private Detalle2Row eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public EmpresaRowChangeEvent(EmpresaRow row, global::System.Data.DataRowAction action) {
+            public Detalle2RowChangeEvent(Detalle2Row row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public EmpresaRow Row {
+            public Detalle2Row Row {
                 get {
                     return this.eventRow;
                 }

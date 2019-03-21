@@ -20,10 +20,12 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Empresa" msprop:Generator_TableClassName="EmpresaDataTable" msprop:Generator_TableVarName="tableEmpresa" msprop:Generator_TablePropName="Empresa" msprop:Generator_RowDeletingName="EmpresaRowDeleting" msprop:Generator_RowChangingName="EmpresaRowChanging" msprop:Generator_RowEvHandlerName="EmpresaRowChangeEventHandler" msprop:Generator_RowDeletedName="EmpresaRowDeleted" msprop:Generator_UserTableName="Empresa" msprop:Generator_RowChangedName="EmpresaRowChanged" msprop:Generator_RowEvArgName="EmpresaRowChangeEvent" msprop:Generator_RowClassName="EmpresaRow">
+        <xs:element name="Detalle2" msprop:Generator_TableClassName="Detalle2DataTable" msprop:Generator_TableVarName="tableDetalle2" msprop:Generator_TablePropName="Detalle2" msprop:Generator_RowDeletingName="Detalle2RowDeleting" msprop:Generator_RowChangingName="Detalle2RowChanging" msprop:Generator_RowEvHandlerName="Detalle2RowChangeEventHandler" msprop:Generator_RowDeletedName="Detalle2RowDeleted" msprop:Generator_UserTableName="Detalle2" msprop:Generator_RowChangedName="Detalle2RowChanged" msprop:Generator_RowEvArgName="Detalle2RowChangeEvent" msprop:Generator_RowClassName="Detalle2Row">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Logo" msprop:Generator_ColumnVarNameInTable="columnLogo" msprop:Generator_ColumnPropNameInRow="Logo" msprop:Generator_ColumnPropNameInTable="LogoColumn" msprop:Generator_UserColumnName="Logo" type="xs:string" minOccurs="0" />
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+              <xs:element name="APELLIDO" msprop:Generator_ColumnVarNameInTable="columnAPELLIDO" msprop:Generator_ColumnPropNameInRow="APELLIDO" msprop:Generator_ColumnPropNameInTable="APELLIDOColumn" msprop:Generator_UserColumnName="APELLIDO" type="xs:string" minOccurs="0" />
+              <xs:element name="CLAVE" msprop:Generator_ColumnVarNameInTable="columnCLAVE" msprop:Generator_ColumnPropNameInRow="CLAVE" msprop:Generator_ColumnPropNameInTable="CLAVEColumn" msprop:Generator_UserColumnName="CLAVE" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
