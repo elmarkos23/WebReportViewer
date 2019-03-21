@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -15,10 +16,11 @@ namespace WebReportViewer
         {
             if (!IsPostBack)
             {
-                ReportViewer1.LocalReport.DataSources.Clear();
-                ReportViewer1.LocalReport.EnableExternalImages = true;
-                ReportViewer1.ProcessingMode = ProcessingMode.Local;
-                ReportViewer1.LocalReport.ReportPath = Server.MapPath("~/Report1.rdlc");
+                ReportViewer a = new ReportViewer();
+                a.LocalReport.DataSources.Clear();
+                a.LocalReport.EnableExternalImages = true;
+                a.ProcessingMode = ProcessingMode.Local;
+                a.LocalReport.ReportPath = Server.MapPath("~/Report1.rdlc");
                 ReportDataSource datasource = new ReportDataSource("dsDatos", getData());
                 ReportDataSource datasource2 = new ReportDataSource("dsDatos2", getData2());
                 string imagePath = new Uri(Server.MapPath("~/xamarin.png")).AbsoluteUri;
@@ -32,11 +34,42 @@ namespace WebReportViewer
                 //colocar en el patch externo
                 //
                 parameters[2] = new ReportParameter("Imagen2", imagePath2);
-                ReportViewer1.LocalReport.DataSources.Add(datasource);
-                ReportViewer1.LocalReport.DataSources.Add(datasource2);
-                ReportViewer1.LocalReport.SetParameters(parameters);
+                a.LocalReport.DataSources.Add(datasource);
+                a.LocalReport.DataSources.Add(datasource2);
+                a.LocalReport.SetParameters(parameters);
 
-                ReportViewer1.LocalReport.Refresh();
+                a.LocalReport.Refresh();
+
+
+
+
+
+                //exportar pdf
+                Warning[] warnings;
+                string[] streamIds;
+                string contentType;
+                string encoding;
+                string extension;
+
+                //Export the RDLC Report to Byte Array.
+                byte[] bytes = a.LocalReport.Render("PDF", null, out contentType, out encoding, out extension, out streamIds, out warnings);
+
+
+                File.WriteAllBytes(Server.MapPath("~/"+DateTime.Now.ToString("ddMMyyyyHHmmss")+".pdf"), bytes.ToArray()); // Requires System.Linq
+
+                ////Download the RDLC Report in Word, Excel, PDF and Image formats.
+                //Response.Clear();
+                //Response.Buffer = true;
+                //Response.Charset = "";
+                //Response.Cache.SetCacheability(HttpCacheability.NoCache);
+                //Response.ContentType = contentType;
+                //Response.AppendHeader("Content-Disposition", "attachment; filename=RDLC." + extension);
+                //Response.BinaryWrite(bytes);
+                //Response.Flush();
+                //Response.End();
+
+
+
 
 
             }
