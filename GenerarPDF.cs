@@ -18,11 +18,11 @@ namespace WebReportViewer
             ReportDataSource datasource = new ReportDataSource("dsDatos", clsData.getData());
             ReportDataSource datasource2 = new ReportDataSource("dsDatos2", clsData.getData2());
             string imagePath = new Uri(HttpContext.Current.Server.MapPath("~/IMAGENES/xamarin.png")).AbsoluteUri;
-            string imagePath2 = new Uri(HttpContext.Current.Server.MapPath("~/IMAGENES/home.png")).AbsoluteUri;
+            string imagePath2 = new Uri(HttpContext.Current.Server.MapPath("~/IMAGENES/Folder1/Folder2/Folder3/AccessKey/12345678909876543212345678909876543212344.png")).AbsoluteUri;
 
             ReportParameter[] parameters = new ReportParameter[3];
             parameters[0] = new ReportParameter("varFecha", DateTime.Now.ToString("dd/MM/yyyy"));
-            parameters[1] = new ReportParameter("ImagenPath", imagePath);
+            parameters[1] = new ReportParameter("ImagenPath", imagePath,true);
 
             //colocar en el patch externo
             parameters[2] = new ReportParameter("Imagen2", imagePath2);

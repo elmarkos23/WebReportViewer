@@ -14,7 +14,7 @@
         <div>
             <h1>Report</h1>
             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-              <rsweb:ReportViewer ID="ReportViewer1" runat="server" ShowToolBar="true" Height="200" BackColor="LightGreen"></rsweb:ReportViewer>
+              <rsweb:ReportViewer ID="rvPagina" runat="server" ShowToolBar="true" Height="200" BackColor="LightBlue" Width="100%"></rsweb:ReportViewer>
         </div>
     </form>
 </body>
